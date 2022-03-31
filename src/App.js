@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Blog from "./components/Blog";
 
 function App() {
+  const [newTitle, setNewTitle] = useState("Default Title");
+  const [newDescription, setNewDescription] = useState("Default Description");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Blog
+        title={newTitle}
+        description={newDescription}
+        setNewTitle={setNewTitle}
+        setNewDescription={setNewDescription}
+      />
     </div>
   );
 }
